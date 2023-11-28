@@ -24,37 +24,37 @@ a {
 }
 
 .py100 {
-    padding: 100px 0;
+    padding: 6.25rem 0;
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
 
     .container,
     .container-md {
-        max-width: 750px;
+        max-width: 46.875rem;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
 
     .container,
     .container-md {
-        max-width: 970px;
+        max-width: 60.625rem;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
 
     .container,
     .container-md {
-        max-width: 1170px;
+        max-width: 73.125rem;
     }
 }
 
 .section-header {
     font-weight: 900;
-    font-size: 40px;
+    font-size: 2.5rem;
     text-align: center;
     z-index: 4;
     position: relative;
@@ -65,25 +65,136 @@ a {
     position: absolute;
     background-image: url("../imgs/dots.png");
     background-repeat: repeat;
-    width: 200px;
-    height: 25px;
-    bottom: -8px;
+    width: 12.5rem;
+    height: 1.5625rem;
+    bottom: -0.5rem;
     z-index: -1;
+}
+
+@media screen and (min-width:48rem) {
+    body:has(.hero-section.active) nav {
+        background-color: transparent !important;
+        box-shadow: none;
+        position: absolute;
+    }
+
+    body:has(.hero-section.active) nav a.nav-link,
+    body:has(.hero-section.active) .navbar-brand {
+        color: white !important;
+    }
+
+    body:has(.hero-section.active) .navbar .navbar-nav .hero-section.active.nav-link span::before {
+        background-color: white;
+    }
+}
+
+.layer-top {
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 555555555555555;
+    animation: 1s top forwards;
+}
+
+.layer-bottom {
+    position: fixed;
+    bottom: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 555555555555555;
+    animation: 1s bottom forwards;
+}
+
+@keyframes top {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: .5;
+    }
+}
+
+@keyframes bottom {
+    0% {
+        bottom: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: .5;
+    }
+}
+
+.loading {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-top: 10px solid var(--bg-section);
+    border-right: 10px solid var(--bg-section);
+    border-bottom: 10px solid var(--bg-section);
+    border-left: 10px solid var(--bg-black);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 555555555555555;
+    animation: 1.5s load, 1.5s 1.5s load2;
+}
+
+@keyframes load {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(360deg);
+        display: none;
+    }
+}
+
+@keyframes load2 {
+    0% {
+        display: block;
+    }
+
+    100% {
+        display: none;
+    }
 }
 
 /* Global */
 
 /* Start Navbar */
+
 nav {
-    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+    box-shadow: 0rem 1.875rem 3.125rem rgba(0, 0, 0, 0.05);
+    background-color: white;
+    transition: all 1s;
 }
 
 .nav-item {
-    margin: 0 10px;
+    margin: 0 .625rem;
+}
+
+.nav-link,
+.navbar-brand {
+    transition: all 1s;
 }
 
 .nav-item a {
-    font-size: 14px;
+    font-size: .875rem;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -94,9 +205,9 @@ nav {
     content: "";
     position: absolute;
     width: 0;
-    height: 2px;
+    height: .125rem;
     background-color: var(--bg-black-light);
-    bottom: 7px;
+    bottom: .4375rem;
     transition: width var(--animation-duration);
 }
 
@@ -111,9 +222,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     content: "";
     position: absolute;
     width: 75%;
-    height: 2px;
+    height: .125rem;
     background-color: var(--bg-black-light);
-    bottom: 7px;
+    bottom: .4375rem;
     transition: width var(--animation-duration);
 }
 
@@ -125,9 +236,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     box-shadow: none;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:47.9375rem) {
     .navbar-collapse {
-        border-top: 1px solid rgba(12, 12, 12, 0.04);
+        border-top: .0625rem solid rgba(12, 12, 12, 0.04);
         width: 100%;
     }
 
@@ -142,16 +253,16 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     body:has(#about:target) .navbar .navbar-nav .nav-link[ href="#about"] span::before,
     body:has(#works:target) .navbar .navbar-nav .nav-link[href="#works"] span::before,
     body:has(#team:target) .navbar .navbar-nav .nav-link[href="#team"] span::before {
-        width: 43px;
+        width: 2.6875rem;
     }
 
     body:has(#services:target) .navbar .navbar-nav .nav-link[href="#services"] span::before,
     body:has(#contact:target) .navbar .navbar-nav .nav-link[href="#contact"] span::before {
-        width: 57px;
+        width: 3.5625rem;
     }
 
     body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::before {
-        width: 45px;
+        width: 2.8125rem;
     }
 }
 
@@ -167,48 +278,48 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #home h5 {
-    font-size: 50px;
+    font-size: 3.125rem;
 }
 
 #home h1 {
     font-weight: 200;
-    font-size: 2rem;
+    font-size: 32px;
 }
 
 .home-icons {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 1.875rem;
 }
 
 .home-icons i {
-    font-size: 13px;
+    font-size: .8125rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
-    width: 35px;
-    height: 35px;
+    margin-right: .625rem;
+    width: 2.1875rem;
+    height: 2.1875rem;
     background-color: var(--bg-black-light);
     border-radius: 50%;
     cursor: pointer;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:48rem) {
     #home h1 {
-        font-size: 3rem;
+        font-size: 48px;
     }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:75rem) {
     #home h1 {
-        font-size: 3.8rem;
+        font-size: 60.8px;
     }
 }
 
-@media screen and (min-width:1400px) {
+@media screen and (min-width:87.5rem) {
     #home h1 {
-        font-size: 4.5rem;
+        font-size: 72px;
     }
 }
 
@@ -216,7 +327,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 /* Start About */
 .about-image {
-    padding-left: 30px;
+    padding-left: 1.875rem;
     position: relative;
 }
 
@@ -226,35 +337,35 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     width: 80%;
     height: 80%;
     position: absolute;
-    bottom: -30px;
-    /* left: -30px; */
+    bottom: -1.875rem;
+    /* left: -1.875rem; */
     left: 0;
     z-index: -1;
     background-repeat: repeat;
 }
 
 .about-content h3 {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 800;
 }
 
 .container_skills {
     width: 100%;
-    height: 25px;
-    border-radius: 5px;
+    height: 1.5625rem;
+    border-radius: .3125rem;
     background-color: #f7f7f7;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0rem .125rem .4375rem rgba(0, 0, 0, 0.15) inset;
 }
 
 .skills {
     text-align: right;
     height: 100%;
-    border-radius: 5px;
+    border-radius: .3125rem;
     color: white;
 }
 
 .skills>* {
-    font-size: 13px;
+    font-size: .8125rem;
 }
 
 .Web-Design,
@@ -279,7 +390,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 .btn-black {
     background-color: #1C1C1C;
     transition: all var(--animation-duration);
-    padding: 10px 30px;
+    padding: .625rem 1.875rem;
 }
 
 .btn-black a {
@@ -288,9 +399,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .btn-white {
     background-color: white;
-    border: 1px solid var(--bg-black);
+    border: .0625rem solid var(--bg-black);
     transition: all var(--animation-duration);
-    padding: 10px 30px;
+    padding: .625rem 1.875rem;
 }
 
 .btn-white a {
@@ -299,13 +410,13 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .btn-black a,
 .btn-white a {
-    font-size: 13px;
+    font-size: .8125rem;
     transition: all var(--animation-duration);
 }
 
 .btn-black:hover {
     background-color: white;
-    border: 1px solid var(--bg-black);
+    border: .0625rem solid var(--bg-black);
 }
 
 .btn-black:hover a {
@@ -328,8 +439,8 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card .card-icon {
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -339,7 +450,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card-icon i {
-    font-size: 30px;
+    font-size: 1.875rem;
     transition: all var(--animation-duration);
 }
 
@@ -348,20 +459,20 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .portfolio-card .layer {
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 25px;
+    top: .625rem;
+    left: .625rem;
+    right: .625rem;
+    bottom: 1.5625rem;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(.625rem);
     transition: all var(--animation-duration);
 }
 
 .portfolio-card .layer h5 {
-    font-size: 14px;
+    font-size: .875rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
+    letter-spacing: .125rem;
+    margin-bottom: .875rem;
     /* transform: translateY(0); */
     transition: all var(--animation-duration);
 }
@@ -372,7 +483,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 /* .portfolio-card:hover h5 {
-    transform: translateY(10px);
+    transform: translateY(.625rem);
 } */
 
 .layer-icon {
@@ -381,17 +492,17 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .layer-icon i {
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
     background-color: var(--bg-black);
     color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5px;
-    border: 1px solid var(--bg-black);
-    font-size: 14px;
+    margin-right: .3125rem;
+    border: .0625rem solid var(--bg-black);
+    font-size: .875rem;
 }
 
 .layer-icon i:hover {
@@ -400,9 +511,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card .card-head {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 900;
-    margin-bottom: 15px;
+    margin-bottom: .9375rem;
 }
 
 .card:hover .card-icon {
@@ -415,18 +526,18 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .card {
     --bs-card-border-color: none;
-    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0rem .625rem 1.875rem -0.5rem rgba(0, 0, 0, 0.1);
 }
 
 /* End  Services*/
 
 /* Start  Works*/
 #works .section-header::before {
-    width: 202px;
+    width: 12.625rem;
 }
 
 #works .row {
-    --bs-gutter-y: 1rem;
+    --bs-gutter-y: 16px;
 }
 
 .modal {
@@ -459,7 +570,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     border: none;
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width:62rem) {
     .modal-content {
         width: 80%;
         margin: auto;
@@ -471,12 +582,12 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .modal-footer button {
-    padding: 5px 15px
+    padding: .3125rem .9375rem
 }
 
 .btn-black,
 .btn-white {
-    padding: 10px 20px;
+    padding: .625rem 1.25rem;
 }
 
 .btn-black:hover i {
@@ -515,10 +626,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 #works .nav-item .nav-link span::before {
     content: "";
     position: absolute;
-    bottom: 3px;
+    bottom: .1875rem;
     width: 0%;
-    left: 15px;
-    height: 2px;
+    left: .9375rem;
+    height: .125rem;
     background-color: var(--bg-black);
 }
 
@@ -527,21 +638,21 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #works .nav-item .nav-link.active.brand span::before {
-    bottom: 3px;
+    bottom: .1875rem;
     width: 61%;
-    left: 16px;
+    left: 1rem;
 }
 
 #works .nav-item .nav-link.active.design span::before {
-    bottom: 3px;
+    bottom: .1875rem;
     width: 65%;
-    left: 16px;
+    left: 1rem;
 }
 
 #works .nav-item .nav-link.active.graphic span::before {
-    bottom: 3px;
+    bottom: .1875rem;
     width: 66%;
-    left: 16px;
+    left: 1rem;
 }
 
 /* End  Works*/
@@ -552,15 +663,15 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #clients .section-header::before {
-    width: 290px;
+    width: 18.125rem;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: #869791;
-    width: 13px;
-    height: 13px;
+    width: .8125rem;
+    height: .8125rem;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: .625rem;
 }
 
 .carousel-indicators [data-bs-target]:hover {
@@ -572,10 +683,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 /* Start facts */
 .facts-icon {
     color: var(--bg-black);
-    height: 80px;
-    width: 80px;
-    font-size: 30px;
-    border: var(--sky) solid 10px;
+    height: 5rem;
+    width: 5rem;
+    font-size: 1.875rem;
+    border: var(--sky) solid .625rem;
     border-radius: 50%;
 }
 
@@ -595,7 +706,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #team .section-header::before {
-    width: 220px;
+    width: 13.75rem;
 }
 
 #team .card-body {
@@ -612,7 +723,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 } */
 
 #team figure {
-    margin-bottom: -1px;
+    margin-bottom: -0.0625rem;
     overflow: hidden;
 }
 
@@ -621,10 +732,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #team .layer {
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: .625rem;
+    left: .625rem;
+    right: .625rem;
+    bottom: .625rem;
     background-color: rgba(255, 255, 255, .9);
     opacity: 0;
     display: flex;
@@ -644,15 +755,15 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 .team-icon i {
     background-color: var(--bg-black);
     color: white;
-    font-size: 20px;
-    width: 45px;
-    height: 45px;
+    font-size: 1.25rem;
+    width: 2.8125rem;
+    height: 2.8125rem;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: .9375rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid var(--bg-black);
+    border: .0625rem solid var(--bg-black);
 }
 
 #team figure:hover img {
@@ -678,7 +789,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 /* Start Contact  */
 #contact .section-header::before {
-    width: 251px;
+    width: 15.6875rem;
 }
 
 .contact-info {
@@ -687,7 +798,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 
 .contact-info h6 {
@@ -695,19 +806,19 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .contact-icon {
-    width: 70px;
-    height: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: .9375rem;
     background-color: #f4f4f4;
     transition: background-color var(--animation-duration);
 }
 
 .contact-icon i {
-    font-size: 30px;
+    font-size: 1.875rem;
     transition: all var(--animation-duration);
 }
 
@@ -741,7 +852,7 @@ form label {
 
 form .btn-black {
     background-color: #1C1C1C;
-    padding: 10px 30px;
+    padding: .625rem 1.875rem;
     color: white;
 }
 
