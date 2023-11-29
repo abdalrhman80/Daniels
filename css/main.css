@@ -24,37 +24,37 @@ a {
 }
 
 .py100 {
-    padding: 6.25rem 0;
+    padding: 100px 0;
 }
 
 
-@media (min-width: 48rem) {
+@media (min-width: 768px) {
 
     .container,
     .container-md {
-        max-width: 46.875rem;
+        max-width: 750px;
     }
 }
 
-@media (min-width: 62rem) {
+@media (min-width: 992px) {
 
     .container,
     .container-md {
-        max-width: 60.625rem;
+        max-width: 970px;
     }
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 1200px) {
 
     .container,
     .container-md {
-        max-width: 73.125rem;
+        max-width: 1170px;
     }
 }
 
 .section-header {
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: 40px;
     text-align: center;
     z-index: 4;
     position: relative;
@@ -65,13 +65,13 @@ a {
     position: absolute;
     background-image: url("../imgs/dots.png");
     background-repeat: repeat;
-    width: 12.5rem;
-    height: 1.5625rem;
-    bottom: -0.5rem;
+    width: 200px;
+    height: 25px;
+    bottom: -8px;
     z-index: -1;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:768px) {
     body:has(.hero-section.active) nav {
         background-color: transparent !important;
         box-shadow: none;
@@ -135,13 +135,13 @@ a {
 }
 
 .loading {
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     border-radius: 50%;
-    border-top: 10px solid var(--bg-section);
-    border-right: 10px solid var(--bg-section);
-    border-bottom: 10px solid var(--bg-section);
-    border-left: 10px solid var(--bg-black);
+    border-top: .625rem solid var(--bg-section);
+    border-right: .625rem solid var(--bg-section);
+    border-bottom: .625rem solid var(--bg-section);
+    border-left: .625rem solid var(--bg-black);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -179,13 +179,13 @@ a {
 /* Start Navbar */
 
 nav {
-    box-shadow: 0rem 1.875rem 3.125rem rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
     background-color: white;
-    transition: all 1s;
+    transition: all .7s;
 }
 
 .nav-item {
-    margin: 0 .625rem;
+    margin: 0 10px;
 }
 
 .nav-link,
@@ -194,14 +194,20 @@ nav {
 }
 
 .nav-item a {
-    font-size: .875rem;
+    font-size: 14px;
 }
 
 .navbar .navbar-nav .nav-link {
     position: relative;
 }
 
-.navbar .navbar-nav .nav-link span::before {
+.navbar-nav .nav-link1 span::before,
+.navbar-nav .nav-link2 span::before,
+.navbar-nav .nav-link3 span::before,
+.navbar-nav .nav-link4 span::before,
+.navbar-nav .nav-link5 span::before,
+.navbar-nav .nav-link6 span::before,
+.navbar-nav .nav-link7 span::before {
     content: "";
     position: absolute;
     width: 0;
@@ -211,18 +217,17 @@ nav {
     transition: width var(--animation-duration);
 }
 
-body:not(body:has(:target)) .navbar .navbar-nav .nav-link.active span::before,
-body:has(#home:target) .navbar .navbar-nav .nav-link[href="#home"] span::before,
-body:has(#about:target) .navbar .navbar-nav .nav-link[ href="#about"] span::before,
-body:has(#works:target) .navbar .navbar-nav .nav-link[href="#works"] span::before,
-body:has(#team:target) .navbar .navbar-nav .nav-link[href="#team"] span::before,
-body:has(#services:target) .navbar .navbar-nav .nav-link[href="#services"] span::before,
-body:has(#contact:target) .navbar .navbar-nav .nav-link[href="#contact"] span::before,
-body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::before {
+body:has(.nav-link.active) .navbar-nav .nav-link1.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link2.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link3.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link4.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link5.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link6.active span::before,
+body:has(.nav-link.active) .navbar-nav .nav-link7.active span::before {
     content: "";
     position: absolute;
-    width: 75%;
     height: .125rem;
+    width: 75%;
     background-color: var(--bg-black-light);
     bottom: .4375rem;
     transition: width var(--animation-duration);
@@ -236,9 +241,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     box-shadow: none;
 }
 
-@media screen and (max-width:47.9375rem) {
+@media screen and (max-width:767px) {
     .navbar-collapse {
-        border-top: .0625rem solid rgba(12, 12, 12, 0.04);
+        border-top: 1px solid rgba(12, 12, 12, 0.04);
         width: 100%;
     }
 
@@ -248,20 +253,19 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
         align-items: center;
     }
 
-    body:not(body:has(:target)) .navbar .navbar-nav .nav-link.active span::before,
-    body:has(#home:target) .navbar .navbar-nav .nav-link[href="#home"] span::before,
-    body:has(#about:target) .navbar .navbar-nav .nav-link[ href="#about"] span::before,
-    body:has(#works:target) .navbar .navbar-nav .nav-link[href="#works"] span::before,
-    body:has(#team:target) .navbar .navbar-nav .nav-link[href="#team"] span::before {
+    body:has(.nav-link.active) .navbar-nav .nav-link1.active span::before,
+    body:has(.nav-link.active) .navbar-nav .nav-link2.active span::before,
+    body:has(.nav-link.active) .navbar-nav .nav-link4.active span::before,
+    body:has(.nav-link.active) .navbar-nav .nav-link6.active span::before {
         width: 2.6875rem;
     }
 
-    body:has(#services:target) .navbar .navbar-nav .nav-link[href="#services"] span::before,
-    body:has(#contact:target) .navbar .navbar-nav .nav-link[href="#contact"] span::before {
+    body:has(.nav-link.active) .navbar-nav .nav-link3.active span::before,
+    body:has(.nav-link.active) .navbar-nav .nav-link7.active span::before {
         width: 3.5625rem;
     }
 
-    body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::before {
+    body:has(.nav-link.active) .navbar-nav .nav-link5.active span::before {
         width: 2.8125rem;
     }
 }
@@ -278,48 +282,48 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #home h5 {
-    font-size: 3.125rem;
+    font-size: 50px;
 }
 
 #home h1 {
     font-weight: 200;
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .home-icons {
     display: flex;
     justify-content: center;
-    margin-top: 1.875rem;
+    margin-top: 30px;
 }
 
 .home-icons i {
-    font-size: .8125rem;
+    font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: .625rem;
-    width: 2.1875rem;
-    height: 2.1875rem;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
     background-color: var(--bg-black-light);
     border-radius: 50%;
     cursor: pointer;
 }
 
-@media screen and (min-width:48rem) {
+@media screen and (min-width:768px) {
     #home h1 {
-        font-size: 48px;
+        font-size: 3rem;
     }
 }
 
-@media screen and (min-width:75rem) {
+@media screen and (min-width:1200px) {
     #home h1 {
-        font-size: 60.8px;
+        font-size: 3.8rem;
     }
 }
 
-@media screen and (min-width:87.5rem) {
+@media screen and (min-width:1400px) {
     #home h1 {
-        font-size: 72px;
+        font-size: 4.5rem;
     }
 }
 
@@ -327,7 +331,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 /* Start About */
 .about-image {
-    padding-left: 1.875rem;
+    padding-left: 30px;
     position: relative;
 }
 
@@ -337,35 +341,35 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     width: 80%;
     height: 80%;
     position: absolute;
-    bottom: -1.875rem;
-    /* left: -1.875rem; */
+    bottom: -30px;
+    /* left: -30px; */
     left: 0;
     z-index: -1;
     background-repeat: repeat;
 }
 
 .about-content h3 {
-    font-size: 1.875rem;
+    font-size: 30px;
     font-weight: 800;
 }
 
 .container_skills {
     width: 100%;
-    height: 1.5625rem;
-    border-radius: .3125rem;
+    height: 25px;
+    border-radius: 5px;
     background-color: #f7f7f7;
-    box-shadow: 0rem .125rem .4375rem rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
 }
 
 .skills {
     text-align: right;
     height: 100%;
-    border-radius: .3125rem;
+    border-radius: 5px;
     color: white;
 }
 
 .skills>* {
-    font-size: .8125rem;
+    font-size: 13px;
 }
 
 .Web-Design,
@@ -390,7 +394,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 .btn-black {
     background-color: #1C1C1C;
     transition: all var(--animation-duration);
-    padding: .625rem 1.875rem;
+    padding: 10px 30px;
 }
 
 .btn-black a {
@@ -399,9 +403,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .btn-white {
     background-color: white;
-    border: .0625rem solid var(--bg-black);
+    border: 1px solid var(--bg-black);
     transition: all var(--animation-duration);
-    padding: .625rem 1.875rem;
+    padding: 10px 30px;
 }
 
 .btn-white a {
@@ -410,13 +414,13 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .btn-black a,
 .btn-white a {
-    font-size: .8125rem;
+    font-size: 13px;
     transition: all var(--animation-duration);
 }
 
 .btn-black:hover {
     background-color: white;
-    border: .0625rem solid var(--bg-black);
+    border: 1px solid var(--bg-black);
 }
 
 .btn-black:hover a {
@@ -439,8 +443,8 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card .card-icon {
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -450,7 +454,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card-icon i {
-    font-size: 1.875rem;
+    font-size: 30px;
     transition: all var(--animation-duration);
 }
 
@@ -459,20 +463,20 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .portfolio-card .layer {
-    top: .625rem;
-    left: .625rem;
-    right: .625rem;
-    bottom: 1.5625rem;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 25px;
     opacity: 0;
-    transform: translateY(.625rem);
+    transform: translateY(10px);
     transition: all var(--animation-duration);
 }
 
 .portfolio-card .layer h5 {
-    font-size: .875rem;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: .125rem;
-    margin-bottom: .875rem;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
     /* transform: translateY(0); */
     transition: all var(--animation-duration);
 }
@@ -483,7 +487,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 /* .portfolio-card:hover h5 {
-    transform: translateY(.625rem);
+    transform: translateY(10px);
 } */
 
 .layer-icon {
@@ -492,17 +496,17 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .layer-icon i {
-    width: 2.1875rem;
-    height: 2.1875rem;
+    width: 35px;
+    height: 35px;
     background-color: var(--bg-black);
     color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: .3125rem;
-    border: .0625rem solid var(--bg-black);
-    font-size: .875rem;
+    margin-right: 5px;
+    border: 1px solid var(--bg-black);
+    font-size: 14px;
 }
 
 .layer-icon i:hover {
@@ -511,9 +515,9 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .card .card-head {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 900;
-    margin-bottom: .9375rem;
+    margin-bottom: 15px;
 }
 
 .card:hover .card-icon {
@@ -526,12 +530,12 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 .card {
     --bs-card-border-color: none;
-    box-shadow: 0rem .625rem 1.875rem -0.5rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:48rem) {
     .card .card-head {
-        font-size: 1.05rem;
+        font-size: 16px;
     }
 }
 
@@ -539,11 +543,11 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 /* Start  Works*/
 #works .section-header::before {
-    width: 12.625rem;
+    width: 202px;
 }
 
 #works .row {
-    --bs-gutter-y: 16px;
+    --bs-gutter-y: 1rem;
 }
 
 .modal {
@@ -576,7 +580,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     border: none;
 }
 
-@media screen and (min-width:62rem) {
+@media screen and (min-width:992px) {
     .modal-content {
         width: 80%;
         margin: auto;
@@ -588,12 +592,12 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .modal-footer button {
-    padding: .3125rem .9375rem
+    padding: 5px 15px
 }
 
 .btn-black,
 .btn-white {
-    padding: .625rem 1.25rem;
+    padding: 10px 20px;
 }
 
 .btn-black:hover i {
@@ -632,10 +636,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 #works .nav-item .nav-link span::before {
     content: "";
     position: absolute;
-    bottom: .1875rem;
+    bottom: 3px;
     width: 0%;
-    left: .9375rem;
-    height: .125rem;
+    left: 15px;
+    height: 2px;
     background-color: var(--bg-black);
 }
 
@@ -644,21 +648,21 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #works .nav-item .nav-link.active.brand span::before {
-    bottom: .1875rem;
+    bottom: 3px;
     width: 61%;
-    left: 1rem;
+    left: 16px;
 }
 
 #works .nav-item .nav-link.active.design span::before {
-    bottom: .1875rem;
+    bottom: 3px;
     width: 65%;
-    left: 1rem;
+    left: 16px;
 }
 
 #works .nav-item .nav-link.active.graphic span::before {
-    bottom: .1875rem;
+    bottom: 3px;
     width: 66%;
-    left: 1rem;
+    left: 16px;
 }
 
 /* End  Works*/
@@ -669,15 +673,15 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #clients .section-header::before {
-    width: 18.125rem;
+    width: 290px;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: #869791;
-    width: .8125rem;
-    height: .8125rem;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    margin-right: .625rem;
+    margin-right: 10px;
 }
 
 .carousel-indicators [data-bs-target]:hover {
@@ -689,10 +693,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 /* Start facts */
 .facts-icon {
     color: var(--bg-black);
-    height: 5rem;
-    width: 5rem;
-    font-size: 1.875rem;
-    border: var(--sky) solid .625rem;
+    height: 80px;
+    width: 80px;
+    font-size: 30px;
+    border: var(--sky) solid 10px;
     border-radius: 50%;
 }
 
@@ -712,7 +716,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #team .section-header::before {
-    width: 13.75rem;
+    width: 220px;
 }
 
 #team .card-body {
@@ -729,7 +733,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 } */
 
 #team figure {
-    margin-bottom: -0.0625rem;
+    margin-bottom: -1px;
     overflow: hidden;
 }
 
@@ -738,10 +742,10 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 #team .layer {
-    top: .625rem;
-    left: .625rem;
-    right: .625rem;
-    bottom: .625rem;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
     background-color: rgba(255, 255, 255, .9);
     opacity: 0;
     display: flex;
@@ -761,15 +765,15 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 .team-icon i {
     background-color: var(--bg-black);
     color: white;
-    font-size: 1.25rem;
-    width: 2.8125rem;
-    height: 2.8125rem;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    margin-right: .9375rem;
+    margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: .0625rem solid var(--bg-black);
+    border: 1px solid var(--bg-black);
 }
 
 #team figure:hover img {
@@ -795,7 +799,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 
 /* Start Contact  */
 #contact .section-header::before {
-    width: 15.6875rem;
+    width: 251px;
 }
 
 .contact-info {
@@ -804,7 +808,7 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 1.875rem;
+    margin-bottom: 30px;
 }
 
 .contact-info h6 {
@@ -812,19 +816,19 @@ body:has(#clients:target) .navbar .navbar-nav .nav-link[ href="#clients"] span::
 }
 
 .contact-icon {
-    width: 4.375rem;
-    height: 4.375rem;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: .9375rem;
+    margin-bottom: 15px;
     background-color: #f4f4f4;
     transition: background-color var(--animation-duration);
 }
 
 .contact-icon i {
-    font-size: 1.875rem;
+    font-size: 30px;
     transition: all var(--animation-duration);
 }
 
@@ -858,7 +862,7 @@ form label {
 
 form .btn-black {
     background-color: #1C1C1C;
-    padding: .625rem 1.875rem;
+    padding: 10px 30px;
     color: white;
 }
 
